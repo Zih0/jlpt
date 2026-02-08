@@ -151,48 +151,58 @@ export default function ListeningPage() {
         </Link>
       </div>
 
-      {/* Video card grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        {listeningData.map((video) => (
-          <button
-            key={video.id}
-            onClick={() => selectVideo(video)}
-            className="p-4 rounded-lg border text-left"
-            style={{
-              backgroundColor:
-                selectedVideoId === video.id
-                  ? "var(--primary-light)"
-                  : "var(--bg-secondary)",
-              borderColor:
-                selectedVideoId === video.id
-                  ? "var(--primary)"
-                  : "var(--border)",
-            }}
-          >
-            <p className="text-h3 font-jp" lang="ja">
-              {video.title}
-            </p>
-            <p
-              className="text-caption mt-1"
-              style={{ color: "var(--text-tertiary)" }}
-            >
-              {video.channelTitle} &middot; {video.expressions.length}개 표현
-            </p>
-            {videoSRS[video.id] && videoSRS[video.id].inSRS > 0 && (
-              <p
-                className="text-caption mt-0.5"
-                style={{ color: "var(--text-tertiary)" }}
+      {/* Compact video list with scroll constraint */}
+      <div
+        className="rounded-lg border overflow-hidden"
+        style={{ borderColor: "var(--border)" }}
+      >
+        <div
+          className="overflow-y-auto"
+          style={{ maxHeight: "240px" }}
+        >
+          {listeningData.map((video, idx) => {
+            const isActive = selectedVideoId === video.id;
+            const srs = videoSRS[video.id];
+            return (
+              <button
+                key={video.id}
+                onClick={() => selectVideo(video)}
+                className="w-full flex items-center gap-3 px-4 py-2.5 text-left transition-colors"
+                style={{
+                  backgroundColor: isActive ? "var(--primary-light)" : "transparent",
+                  borderBottom: idx < listeningData.length - 1 ? "1px solid var(--border)" : "none",
+                }}
               >
-                {videoSRS[video.id].mature}/{video.expressions.length} 숙달
-                {videoSRS[video.id].struggling > 0 && (
-                  <span style={{ color: "var(--warning)", marginLeft: "6px" }}>
-                    {videoSRS[video.id].struggling}개 어려운 항목
-                  </span>
+                <span
+                  className="shrink-0 text-caption font-mono font-medium w-9 text-center rounded-md py-0.5"
+                  style={{
+                    backgroundColor: isActive ? "var(--primary)" : "var(--bg-secondary)",
+                    color: isActive ? "white" : "var(--text-tertiary)",
+                  }}
+                >
+                  {idx + 1}
+                </span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-body-sm font-jp truncate" lang="ja" style={{ color: isActive ? "var(--primary)" : "var(--text-primary)" }}>
+                    {video.title}
+                  </p>
+                  <p className="text-caption truncate" style={{ color: "var(--text-tertiary)" }}>
+                    {video.expressions.length}개 표현
+                    {srs && srs.inSRS > 0 && (
+                      <span> · {srs.mature}/{video.expressions.length} 숙달</span>
+                    )}
+                    {srs && srs.struggling > 0 && (
+                      <span style={{ color: "var(--warning)" }}> · {srs.struggling} 어려움</span>
+                    )}
+                  </p>
+                </div>
+                {isActive && (
+                  <span style={{ color: "var(--primary)", fontSize: "12px" }}>▶</span>
                 )}
-              </p>
-            )}
-          </button>
-        ))}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Selected video detail — side-by-side on lg */}
