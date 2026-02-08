@@ -1,0 +1,96 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv021Expressions: ListeningExpression[] = [
+  {
+    expression: "期待に答える",
+    expressionReading: "きたいにこたえる",
+    meaning: "기대에 부응하다",
+    example: "できるだけ僕も皆さんの期待に答えれるように頑張っていくので",
+    exampleReading: "できるだけぼくもみなさんのきたいにこたえれるようにがんばっていくので",
+    exampleTranslation: "최대한 저도 여러분의 기대에 부응할 수 있도록 열심히 하겠습니다",
+    startTime: 105.28,
+    vocabulary: [
+      { word: "期待", reading: "きたい", meaning: "기대" },
+      { word: "答える", reading: "こたえる", meaning: "응하다, 부응하다" },
+    ],
+  },
+  {
+    expression: "大部分を占める",
+    expressionReading: "だいぶぶんをしめる",
+    meaning: "대부분을 차지하다",
+    example: "プログラミングがね僕の生活の大部分を占めてるのは間違いないんですけど",
+    exampleReading: "プログラミングがねぼくのせいかつのだいぶぶんをしめてるのはまちがいないんですけど",
+    exampleTranslation: "프로그래밍이 내 생활의 대부분을 차지하고 있는 건 틀림없는데",
+    startTime: 463.40,
+    vocabulary: [
+      { word: "大部分", reading: "だいぶぶん", meaning: "대부분" },
+      { word: "占める", reading: "しめる", meaning: "차지하다" },
+    ],
+  },
+  {
+    expression: "人工知能",
+    expressionReading: "じんこうちのう",
+    meaning: "인공지능 (AI)",
+    example: "当時まあ人工知能が話題になってた時でマツコロイドとかがちょうどテレビで出た時だった",
+    exampleReading: "とうじまあじんこうちのうがわだいになってたときでマツコロイドとかがちょうどテレビにでたときだった",
+    exampleTranslation: "당시 인공지능이 화제가 되고 있을 때 마츠코로이드 같은 게 TV에 나올 때였는데",
+    startTime: 487.60,
+    vocabulary: [
+      { word: "人工", reading: "じんこう", meaning: "인공" },
+      { word: "知能", reading: "ちのう", meaning: "지능" },
+      { word: "話題", reading: "わだい", meaning: "화제" },
+    ],
+  },
+  {
+    expression: "ビビッとくる",
+    expressionReading: "ビビッとくる",
+    meaning: "번뜩 오다, 직감적으로 끌리다 (구어)",
+    example: "なんかねそれ見た時にビビッときて",
+    exampleReading: "なんかねそれみたときにビビッときて",
+    exampleTranslation: "뭔가 그걸 봤을 때 번뜩 왔어요",
+    startTime: 494.08,
+    vocabulary: [
+      { word: "ビビッ", reading: "ビビッ", meaning: "번뜩 (의태어)" },
+    ],
+  },
+  {
+    expression: "在学中",
+    expressionReading: "ざいがくちゅう",
+    meaning: "재학 중",
+    example: "大学在学中にまあ当時牛角でバイトしてた",
+    exampleReading: "だいがくざいがくちゅうにまあとうじぎゅうかくでバイトしてた",
+    exampleTranslation: "대학 재학 중에 당시 규카쿠에서 아르바이트를 하고 있었는데",
+    startTime: 544.12,
+    vocabulary: [
+      { word: "在学", reading: "ざいがく", meaning: "재학" },
+      { word: "当時", reading: "とうじ", meaning: "당시" },
+    ],
+  },
+  {
+    expression: "努力を惜しまない",
+    expressionReading: "どりょくをおしまない",
+    meaning: "노력을 아끼지 않다",
+    example: "それなりに勉強し続けて努力を惜しまなければ結構いい環境で働けたりとか",
+    exampleReading: "それなりにべんきょうしつづけてどりょくをおしまなければけっこういいかんきょうではたらけたりとか",
+    exampleTranslation: "나름대로 계속 공부하고 노력을 아끼지 않으면 꽤 좋은 환경에서 일할 수 있거나",
+    startTime: 632.20,
+    vocabulary: [
+      { word: "努力", reading: "どりょく", meaning: "노력" },
+      { word: "惜しむ", reading: "おしむ", meaning: "아끼다, 아까워하다" },
+      { word: "環境", reading: "かんきょう", meaning: "환경" },
+    ],
+  },
+  {
+    expression: "ワーケーション",
+    expressionReading: "ワーケーション",
+    meaning: "워케이션 (일과 휴가를 결합한 근무 방식)",
+    example: "リモートワークで働いたりフレックスタイムで働いたりとかあとはワーケーションとか行けたりとか",
+    exampleReading: "リモートワークではたらいたりフレックスタイムではたらいたりとかあとはワーケーションとかいけたりとか",
+    exampleTranslation: "리모트워크로 일하거나 플렉스타임으로 일하거나 워케이션도 갈 수 있고",
+    startTime: 641.32,
+    vocabulary: [
+      { word: "ワーケーション", reading: "ワーケーション", meaning: "워케이션 (work + vacation)" },
+      { word: "フレックスタイム", reading: "フレックスタイム", meaning: "유연근무제" },
+    ],
+  },
+];

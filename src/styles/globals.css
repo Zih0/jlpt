@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS Custom Properties - Light Mode Only
+   ============================================ */
+:root {
+  --bg-primary: #fafaf8;
+  --bg-secondary: #f3f2ee;
+  --bg-tertiary: #e8e6e1;
+  --text-primary: #1a1a2e;
+  --text-secondary: #4a4a5a;
+  --text-tertiary: #8a8a9a;
+  --primary: #2d3a8c;
+  --primary-hover: #1e2a6e;
+  --primary-light: #e8eaf6;
+  --accent: #d4930d;
+  --accent-light: #fff3d0;
+  --success: #2e7d4f;
+  --success-light: #e8f5e9;
+  --error: #c62828;
+  --error-light: #ffebee;
+  --warning: #e65100;
+  --border: #d9d7d2;
+}
+
+/* ============================================
+   Base Styles
+   ============================================ */
+@layer base {
+  body {
+    @apply font-sans text-body;
+    color: var(--text-primary);
+    background-color: var(--bg-primary);
+  }
+
+  [lang="ja"] {
+    @apply font-jp;
+    line-height: 1.8;
+  }
+
+  h1 { @apply text-h1; }
+  h2 { @apply text-h2; }
+  h3 { @apply text-h3; }
+
+  *:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
+}
+
+/* ============================================
+   Furigana
+   ============================================ */
+ruby rt {
+  font-size: 0.5em;
+  color: var(--text-tertiary);
+}
+
+/* ============================================
+   Reduced Motion
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition-duration: 0.01ms !important;
+  }
+}

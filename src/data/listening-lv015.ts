@@ -1,0 +1,108 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv015Expressions: ListeningExpression[] = [
+  {
+    expression: "キャッチアップ",
+    expressionReading: "キャッチアップ",
+    meaning: "따라잡기, 빠르게 습득하기 (업무/기술을 익히는 것)",
+    example: "業務の中でキャッチアップさせてもらう時間とかもしっかり取ってもらってるので",
+    exampleReading: "ぎょうむのなかでキャッチアップさせてもらうじかんとかもしっかりとってもらってるので",
+    exampleTranslation: "업무 중에 캐치업할 시간도 확실히 확보해 주셔서",
+    startTime: 21.18,
+    vocabulary: [
+      { word: "業務", reading: "ぎょうむ", meaning: "업무" },
+      { word: "しっかり", reading: "しっかり", meaning: "확실히, 제대로" },
+    ],
+  },
+  {
+    expression: "ペアプロ",
+    expressionReading: "ぺあぷろ",
+    meaning: "페어 프로그래밍 (두 사람이 한 조가 되어 개발하는 방식)",
+    example: "前の部署ではね基本的にペアプロをして開発してたんですよね",
+    exampleReading: "まえのぶしょではねきほんてきにぺあぷろをしてかいはつしてたんですよね",
+    exampleTranslation: "이전 부서에서는 기본적으로 페어 프로그래밍을 하며 개발했었어요",
+    startTime: 48.54,
+    vocabulary: [
+      { word: "部署", reading: "ぶしょ", meaning: "부서" },
+      { word: "基本的に", reading: "きほんてきに", meaning: "기본적으로" },
+      { word: "開発", reading: "かいはつ", meaning: "개발" },
+    ],
+  },
+  {
+    expression: "スクラム",
+    expressionReading: "すくらむ",
+    meaning: "스크럼 (애자일 개발 방법론의 하나)",
+    example: "新しい部署で完全に一人で開発ということで一応スクラムでやってるんですけど",
+    exampleReading: "あたらしいぶしょでかんぜんにひとりでかいはつということでいちおうすくらむでやってるんですけど",
+    exampleTranslation: "새 부서에서 완전히 혼자 개발하게 되어서 일단 스크럼으로 하고 있는데",
+    startTime: 60.90,
+    vocabulary: [
+      { word: "完全に", reading: "かんぜんに", meaning: "완전히" },
+      { word: "一応", reading: "いちおう", meaning: "일단, 일응" },
+    ],
+  },
+  {
+    expression: "疲労の蓄積",
+    expressionReading: "ひろうのちくせき",
+    meaning: "피로의 축적",
+    example: "前よりね疲労の蓄積は少ないかなというような印象があります",
+    exampleReading: "まえよりねひろうのちくせきはすくないかなというようないんしょうがあります",
+    exampleTranslation: "전보다 피로 축적은 적은 것 같다는 인상이 있어요",
+    startTime: 74.40,
+    vocabulary: [
+      { word: "疲労", reading: "ひろう", meaning: "피로" },
+      { word: "蓄積", reading: "ちくせき", meaning: "축적" },
+      { word: "印象", reading: "いんしょう", meaning: "인상" },
+    ],
+  },
+  {
+    expression: "マイルストーン",
+    expressionReading: "まいるすとーん",
+    meaning: "마일스톤, 이정표 (프로젝트의 중요 지점)",
+    example: "僕の中ではね結構まあ一つのマイルストーンとして嬉しくて",
+    exampleReading: "ぼくのなかではねけっこうまあひとつのまいるすとーんとしてうれしくて",
+    exampleTranslation: "저한테는 꽤 하나의 마일스톤으로서 기쁘고",
+    startTime: 153.96,
+    vocabulary: [
+      { word: "結構", reading: "けっこう", meaning: "꽤, 상당히" },
+    ],
+  },
+  {
+    expression: "インプレッション数",
+    expressionReading: "いんぷれっしょんすう",
+    meaning: "노출 수, 임프레션 수 (콘텐츠가 표시된 횟수)",
+    example: "動画の質が低すぎるとインプレッション数とかが下がってまた伸びないみたいな形になるんで",
+    exampleReading: "どうがのしつがひくすぎるといんぷれっしょんすうとかがさがってまたのびないみたいなかたちになるんで",
+    exampleTranslation: "영상의 질이 너무 낮으면 노출 수 같은 게 떨어져서 또 안 뜨는 형태가 되니까",
+    startTime: 169.74,
+    vocabulary: [
+      { word: "質", reading: "しつ", meaning: "질, 품질" },
+      { word: "伸びない", reading: "のびない", meaning: "늘지 않다, 뜨지 않다" },
+    ],
+  },
+  {
+    expression: "コンスタントに",
+    expressionReading: "こんすたんとに",
+    meaning: "꾸준히, 지속적으로",
+    example: "コンスタントに質の高いコンテンツを出し続けなければいけないっていう",
+    exampleReading: "こんすたんとにしつのたかいこんてんつをだしつづけなければいけないっていう",
+    exampleTranslation: "꾸준히 퀄리티 높은 콘텐츠를 계속 내야 한다는",
+    startTime: 173.22,
+    vocabulary: [
+      { word: "出し続ける", reading: "だしつづける", meaning: "계속 내다" },
+    ],
+  },
+  {
+    expression: "リソース",
+    expressionReading: "りそーす",
+    meaning: "리소스, 자원 (시간·인력 등의 가용 자원)",
+    example: "一応僕のリソースの関係で1ヶ月15名から最高でも20名ぐらいに限定させてもらってるので",
+    exampleReading: "いちおうぼくのりそーすのかんけいでいっかげつじゅうごめいからさいこうでもにじゅうめいぐらいにげんていさせてもらってるので",
+    exampleTranslation: "일단 제 리소스 관계로 한 달에 15명에서 최대 20명 정도로 제한하고 있어서",
+    startTime: 366.30,
+    vocabulary: [
+      { word: "限定", reading: "げんてい", meaning: "제한, 한정" },
+      { word: "関係", reading: "かんけい", meaning: "관계, 사정" },
+    ],
+  },
+];

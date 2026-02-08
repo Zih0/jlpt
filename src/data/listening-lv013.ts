@@ -1,0 +1,98 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv013Expressions: ListeningExpression[] = [
+  {
+    expression: "習慣化する",
+    expressionReading: "しゅうかんかする",
+    meaning: "습관화하다 (의식적으로 반복하여 습관으로 만들다)",
+    example: "できるだけ習慣化して運動するようにしています",
+    exampleReading: "できるだけしゅうかんかしてうんどうするようにしています",
+    exampleTranslation: "가능한 한 습관화해서 운동하도록 하고 있습니다",
+    startTime: 43.56,
+    vocabulary: [
+      { word: "習慣", reading: "しゅうかん", meaning: "습관" },
+      { word: "化", reading: "か", meaning: "~화 (변화 접미사)" },
+      { word: "運動", reading: "うんどう", meaning: "운동" },
+    ],
+  },
+  {
+    expression: "ルーティーン",
+    expressionReading: "ルーティーン",
+    meaning: "루틴, 정해진 일과 (매일 반복하는 패턴)",
+    example: "だいたい10時前後から仕事を開始するというようなルーティーンです",
+    exampleReading: "だいたいじゅうじぜんごからしごとをかいしするというようなルーティーンです",
+    exampleTranslation: "대략 10시 전후에 일을 시작하는 것이 루틴입니다",
+    startTime: 117.12,
+    vocabulary: [
+      { word: "前後", reading: "ぜんご", meaning: "전후, 경" },
+      { word: "開始", reading: "かいし", meaning: "개시, 시작" },
+    ],
+  },
+  {
+    expression: "カバレッジ",
+    expressionReading: "カバレッジ",
+    meaning: "커버리지 (테스트가 코드를 어느 정도 커버하는지의 비율)",
+    example: "カバレッジ足りてなかったとこを足してたのと",
+    exampleReading: "カバレッジたりてなかったとこをたしてたのと",
+    exampleTranslation: "커버리지가 부족했던 부분을 추가하고 있었고",
+    startTime: 120.08,
+    vocabulary: [
+      { word: "足りる", reading: "たりる", meaning: "충분하다, 족하다" },
+      { word: "足す", reading: "たす", meaning: "추가하다, 더하다" },
+    ],
+  },
+  {
+    expression: "強制的に",
+    expressionReading: "きょうせいてきに",
+    meaning: "강제적으로 (자발적이 아닌 의무적으로)",
+    example: "やっぱり毎日強制的に時間取らないと習慣化できないので",
+    exampleReading: "やっぱりまいにちきょうせいてきにじかんとらないとしゅうかんかできないので",
+    exampleTranslation: "역시 매일 강제적으로 시간을 내지 않으면 습관화할 수 없어서",
+    startTime: 106.44,
+    vocabulary: [
+      { word: "強制", reading: "きょうせい", meaning: "강제" },
+      { word: "的", reading: "てき", meaning: "~적 (형용사 접미사)" },
+      { word: "時間を取る", reading: "じかんをとる", meaning: "시간을 내다" },
+    ],
+  },
+  {
+    expression: "持ち帰り",
+    expressionReading: "もちかえり",
+    meaning: "테이크아웃, 포장 (가게에서 사서 들고 가는 것)",
+    example: "持ち帰りでアイスのラテください",
+    exampleReading: "もちかえりでアイスのラテください",
+    exampleTranslation: "테이크아웃으로 아이스 라떼 주세요",
+    startTime: 193.86,
+    vocabulary: [
+      { word: "持つ", reading: "もつ", meaning: "가지다, 들다" },
+      { word: "帰り", reading: "かえり", meaning: "돌아감" },
+    ],
+  },
+  {
+    expression: "時間帯",
+    expressionReading: "じかんたい",
+    meaning: "시간대 (특정 시간의 범위)",
+    example: "朝の時間帯は毎日基本的にはYouTubeの作業と新しい技術の勉強をしています",
+    exampleReading: "あさのじかんたいはまいにちきほんてきにはYouTubeのさぎょうとあたらしいぎじゅつのべんきょうをしています",
+    exampleTranslation: "아침 시간대에는 매일 기본적으로 유튜브 작업과 새로운 기술 공부를 하고 있습니다",
+    startTime: 98.78,
+    vocabulary: [
+      { word: "時間", reading: "じかん", meaning: "시간" },
+      { word: "帯", reading: "たい", meaning: "대, 범위" },
+      { word: "基本的", reading: "きほんてき", meaning: "기본적" },
+    ],
+  },
+  {
+    expression: "申します",
+    expressionReading: "もうします",
+    meaning: "'~라고 합니다'의 겸양어 (자기소개 시 사용)",
+    example: "市川と申します。よろしくお願いします",
+    exampleReading: "いちかわともうします。よろしくおねがいします",
+    exampleTranslation: "이치카와라고 합니다. 잘 부탁드립니다",
+    startTime: 333.20,
+    vocabulary: [
+      { word: "申す", reading: "もうす", meaning: "말하다 (겸양어)" },
+      { word: "よろしく", reading: "よろしく", meaning: "잘" },
+    ],
+  },
+];

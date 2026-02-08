@@ -1,0 +1,108 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv019Expressions: ListeningExpression[] = [
+  {
+    expression: "帰省する",
+    expressionReading: "きせいする",
+    meaning: "귀성하다, 고향에 돌아가다",
+    example: "先週ちょっと大阪に帰省したりとか旅行行ったりして",
+    exampleReading: "せんしゅうちょっとおおさかにきせいしたりとかりょこういったりして",
+    exampleTranslation: "지난주 오사카에 귀성하거나 여행을 가서",
+    startTime: 32.96,
+    vocabulary: [
+      { word: "帰省", reading: "きせい", meaning: "귀성" },
+      { word: "旅行", reading: "りょこう", meaning: "여행" },
+    ],
+  },
+  {
+    expression: "コンピューターサイエンス専攻",
+    expressionReading: "コンピューターサイエンスせんこう",
+    meaning: "컴퓨터 사이언스 전공",
+    example: "コンピューターサイエンス専攻じゃないんですけどCSどうやって学べばいいんですか",
+    exampleReading: "コンピューターサイエンスせんこうじゃないんですけどCSどうやってまなべばいいんですか",
+    exampleTranslation: "컴퓨터 사이언스 전공이 아닌데 CS를 어떻게 배우면 되나요",
+    startTime: 314.76,
+    vocabulary: [
+      { word: "専攻", reading: "せんこう", meaning: "전공" },
+      { word: "学ぶ", reading: "まなぶ", meaning: "배우다" },
+    ],
+  },
+  {
+    expression: "データ構造とアルゴリズム",
+    expressionReading: "データこうぞうとアルゴリズム",
+    meaning: "데이터 구조와 알고리즘",
+    example: "余裕があればデータ構造とアルゴリズムとかあるんですけど",
+    exampleReading: "よゆうがあればデータこうぞうとアルゴリズムとかあるんですけど",
+    exampleTranslation: "여유가 있으면 데이터 구조와 알고리즘 같은 것도 있지만",
+    startTime: 333.30,
+    vocabulary: [
+      { word: "余裕", reading: "よゆう", meaning: "여유" },
+      { word: "構造", reading: "こうぞう", meaning: "구조" },
+    ],
+  },
+  {
+    expression: "鉄板",
+    expressionReading: "てっぱん",
+    meaning: "확실한 것, 정석 (구어: 틀림없는 선택)",
+    example: "まあここら辺は鉄板なので知ってる方も多いと思うんですけど",
+    exampleReading: "まあここらへんはてっぱんなのでしってるかたもおおいとおもうんですけど",
+    exampleTranslation: "이 정도는 정석이라서 아시는 분도 많을 거라고 생각하는데",
+    startTime: 359.64,
+    vocabulary: [
+      { word: "鉄板", reading: "てっぱん", meaning: "철판; (비유) 정석, 확실한 것" },
+      { word: "参考書", reading: "さんこうしょ", meaning: "참고서" },
+    ],
+  },
+  {
+    expression: "腐るほどいる",
+    expressionReading: "くさるほどいる",
+    meaning: "썩을 만큼 있다, 매우 많다 (구어 표현)",
+    example: "CS専攻じゃなくてもメガベンチャーでエンジニアやってる人なんて腐るほどいるので",
+    exampleReading: "CSせんこうじゃなくてもメガベンチャーでエンジニアやってるひとなんてくさるほどいるので",
+    exampleTranslation: "CS 전공이 아니어도 메가벤처에서 엔지니어 하는 사람은 넘쳐나니까",
+    startTime: 384.18,
+    vocabulary: [
+      { word: "腐る", reading: "くさる", meaning: "썩다; (비유) 넘쳐나다" },
+      { word: "専攻", reading: "せんこう", meaning: "전공" },
+    ],
+  },
+  {
+    expression: "ハードルが高い",
+    expressionReading: "ハードルがたかい",
+    meaning: "허들이 높다, 난이도가 높다",
+    example: "2週間開くと動画を撮影するのが結構ねハードル高くなるんですよ",
+    exampleReading: "にしゅうかんあくとどうがをさつえいするのがけっこうねハードルたかくなるんですよ",
+    exampleTranslation: "2주간 비우면 동영상 촬영하는 게 꽤 허들이 높아져요",
+    startTime: 429.06,
+    vocabulary: [
+      { word: "撮影", reading: "さつえい", meaning: "촬영" },
+      { word: "結構", reading: "けっこう", meaning: "꽤, 상당히" },
+    ],
+  },
+  {
+    expression: "乗り気にならない",
+    expressionReading: "のりきにならない",
+    meaning: "의욕이 나지 않다, 내키지 않다",
+    example: "1、2週間空いただけで全然乗り気にならないというかモチベーションがグッと下がっちゃう",
+    exampleReading: "いち、にしゅうかんあいただけでぜんぜんのりきにならないというかモチベーションがグッとさがっちゃう",
+    exampleTranslation: "1, 2주 비었을 뿐인데 전혀 의욕이 나지 않는다고 할까, 모티베이션이 확 떨어져 버려",
+    startTime: 440.28,
+    vocabulary: [
+      { word: "乗り気", reading: "のりき", meaning: "의욕, 하고 싶은 마음" },
+      { word: "モチベーション", reading: "モチベーション", meaning: "모티베이션, 동기 부여" },
+    ],
+  },
+  {
+    expression: "ロードマップ作成",
+    expressionReading: "ロードマップさくせい",
+    meaning: "로드맵 작성 (학습/커리어 계획 수립)",
+    example: "エンジニアになるためのロードマップ作成とかそういった相談が多い",
+    exampleReading: "エンジニアになるためのロードマップさくせいとかそういったそうだんがおおい",
+    exampleTranslation: "엔지니어가 되기 위한 로드맵 작성 같은 상담이 많다",
+    startTime: 547.02,
+    vocabulary: [
+      { word: "作成", reading: "さくせい", meaning: "작성" },
+      { word: "相談", reading: "そうだん", meaning: "상담" },
+    ],
+  },
+];

@@ -1,0 +1,107 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv017Expressions: ListeningExpression[] = [
+  {
+    expression: "出社",
+    expressionReading: "しゅっしゃ",
+    meaning: "출근, 사무실에 나가는 것 (재택과 대비)",
+    example: "出社はもうでも3ヶ月に1回とかそんな感じ",
+    exampleReading: "しゅっしゃはもうでもさんかげつにいっかいとかそんなかんじ",
+    exampleTranslation: "출근은 이제 3개월에 1번 정도 그런 느낌",
+    startTime: 39.96,
+    vocabulary: [
+      { word: "出社", reading: "しゅっしゃ", meaning: "출근" },
+    ],
+  },
+  {
+    expression: "リモート",
+    expressionReading: "りもーと",
+    meaning: "리모트, 원격 근무",
+    example: "普段はあれですよね長野に住まれてる感じほとんどリモート",
+    exampleReading: "ふだんはあれですよねながのにすまれてるかんじほとんどりもーと",
+    exampleTranslation: "평소에는 나가노에 사시는 느낌으로 거의 리모트",
+    startTime: 45.80,
+    vocabulary: [
+      { word: "普段", reading: "ふだん", meaning: "평소" },
+      { word: "ほとんど", reading: "ほとんど", meaning: "거의" },
+    ],
+  },
+  {
+    expression: "新規機能の追加",
+    expressionReading: "しんききのうのついか",
+    meaning: "신규 기능 추가 (개발 업무에서 새 기능을 넣는 것)",
+    example: "朝会の後はちょっと今担当してる開発新規機能の追加とかをやってて",
+    exampleReading: "ちょうかいのあとはちょっといまたんとうしてるかいはつしんききのうのついかとかをやってて",
+    exampleTranslation: "조회 후에는 지금 담당하고 있는 개발 신규 기능 추가 같은 걸 하고 있었고",
+    startTime: 239.32,
+    vocabulary: [
+      { word: "担当", reading: "たんとう", meaning: "담당" },
+      { word: "新規", reading: "しんき", meaning: "신규" },
+      { word: "追加", reading: "ついか", meaning: "추가" },
+    ],
+  },
+  {
+    expression: "社内アプリ",
+    expressionReading: "しゃないあぷり",
+    meaning: "사내 앱, 회사 내부 애플리케이션",
+    example: "じゃあなんか社内アプリというかをリアクトに書き換えてみたいなことしてるって感じですか",
+    exampleReading: "じゃあなんかしゃないあぷりというかをリアクトにかきかえてみたいなことしてるってかんじですか",
+    exampleTranslation: "그러면 사내 앱 같은 걸 리액트로 전환하는 일을 하고 있는 건가요",
+    startTime: 260.32,
+    vocabulary: [
+      { word: "社内", reading: "しゃない", meaning: "사내, 회사 내" },
+      { word: "書き換える", reading: "かきかえる", meaning: "다시 쓰다, 전환하다" },
+    ],
+  },
+  {
+    expression: "個人業務",
+    expressionReading: "こじんぎょうむ",
+    meaning: "개인 업무 (혼자서 하는 작업)",
+    example: "個人業務は1人でコード書くみたいな感じが多い",
+    exampleReading: "こじんぎょうむはひとりでこーどかくみたいなかんじがおおい",
+    exampleTranslation: "개인 업무는 혼자 코드 쓰는 느낌이 많아요",
+    startTime: 268.76,
+    vocabulary: [
+      { word: "個人", reading: "こじん", meaning: "개인" },
+      { word: "業務", reading: "ぎょうむ", meaning: "업무" },
+    ],
+  },
+  {
+    expression: "風潮",
+    expressionReading: "ふうちょう",
+    meaning: "풍조, 분위기 (사회적인 경향이나 흐름)",
+    example: "残業はしなくても大丈夫の風潮はあると思います",
+    exampleReading: "ざんぎょうはしなくてもだいじょうぶのふうちょうはあるとおもいます",
+    exampleTranslation: "잔업을 안 해도 괜찮다는 분위기는 있다고 생각합니다",
+    startTime: 443.40,
+    vocabulary: [
+      { word: "残業", reading: "ざんぎょう", meaning: "잔업, 야근" },
+      { word: "大丈夫", reading: "だいじょうぶ", meaning: "괜찮다" },
+    ],
+  },
+  {
+    expression: "ピンキリ",
+    expressionReading: "ぴんきり",
+    meaning: "천차만별, 가지각색 (최상에서 최하까지 다양한)",
+    example: "動画1本作るのにどれぐらい時間かかるんですか結構ピンキリですけどね",
+    exampleReading: "どうがいっぽんつくるのにどれぐらいじかんかかるんですかけっこうぴんきりですけどね",
+    exampleTranslation: "영상 1편 만드는 데 얼마나 시간 걸려요? 꽤 천차만별이지만요",
+    startTime: 672.24,
+    vocabulary: [
+      { word: "動画", reading: "どうが", meaning: "영상, 동영상" },
+      { word: "結構", reading: "けっこう", meaning: "꽤, 상당히" },
+    ],
+  },
+  {
+    expression: "コワーキングスペース",
+    expressionReading: "こわーきんぐすぺーす",
+    meaning: "코워킹 스페이스, 공유 업무 공간",
+    example: "なんかこんな感じのコワーキングスペースみたいな感じですか",
+    exampleReading: "なんかこんなかんじのこわーきんぐすぺーすみたいなかんじですか",
+    exampleTranslation: "뭔가 이런 느낌의 코워킹 스페이스 같은 건가요",
+    startTime: 398.24,
+    vocabulary: [
+      { word: "スペース", reading: "すぺーす", meaning: "공간" },
+    ],
+  },
+];

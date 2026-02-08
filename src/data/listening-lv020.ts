@@ -1,0 +1,95 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv020Expressions: ListeningExpression[] = [
+  {
+    expression: "出社する",
+    expressionReading: "しゅっしゃする",
+    meaning: "출근하다 (사무실에 나가다)",
+    example: "ちょっとね出社して作業してから行こうかなという風に思ってます",
+    exampleReading: "ちょっとねしゅっしゃしてさぎょうしてからいこうかなというふうにおもってます",
+    exampleTranslation: "출근해서 작업하고 나서 갈까 하고 생각하고 있어요",
+    startTime: 8.08,
+    vocabulary: [
+      { word: "出社", reading: "しゅっしゃ", meaning: "출근" },
+      { word: "作業", reading: "さぎょう", meaning: "작업" },
+    ],
+  },
+  {
+    expression: "企業合同",
+    expressionReading: "きぎょうごうどう",
+    meaning: "기업 합동, 기업 연합",
+    example: "今回3つの企業合同で集まってGoogleでハッカソンするみたいなイベントだった",
+    exampleReading: "こんかいみっつのきぎょうごうどうであつまってGoogleでハッカソンするみたいなイベントだった",
+    exampleTranslation: "이번에 3개 기업 합동으로 모여서 Google에서 해커톤하는 이벤트였어요",
+    startTime: 69.40,
+    vocabulary: [
+      { word: "企業", reading: "きぎょう", meaning: "기업" },
+      { word: "合同", reading: "ごうどう", meaning: "합동" },
+    ],
+  },
+  {
+    expression: "再認識させられる",
+    expressionReading: "さいにんしきさせられる",
+    meaning: "재인식하게 되다, 다시 깨닫게 되다",
+    example: "僕のエンジニアとしての雑魚さを再認識させられたというか",
+    exampleReading: "ぼくのエンジニアとしてのざこさをさいにんしきさせられたというか",
+    exampleTranslation: "나의 엔지니어로서의 실력 부족을 다시 깨닫게 됐다고 할까",
+    startTime: 86.28,
+    vocabulary: [
+      { word: "再認識", reading: "さいにんしき", meaning: "재인식" },
+      { word: "雑魚", reading: "ざこ", meaning: "잡어; (비유) 약자, 실력 부족" },
+    ],
+  },
+  {
+    expression: "言うまでもなく",
+    expressionReading: "いうまでもなく",
+    meaning: "말할 것도 없이, 당연히",
+    example: "Googleエンジニアはもちろん言うまでもなく優秀なんですけど",
+    exampleReading: "Googleエンジニアはもちろんいうまでもなくゆうしゅうなんですけど",
+    exampleTranslation: "Google 엔지니어는 물론 말할 것도 없이 우수한데",
+    startTime: 89.04,
+    vocabulary: [
+      { word: "優秀", reading: "ゆうしゅう", meaning: "우수한" },
+      { word: "刺激", reading: "しげき", meaning: "자극" },
+    ],
+  },
+  {
+    expression: "提出する",
+    expressionReading: "ていしゅつする",
+    meaning: "제출하다",
+    example: "来週までに提出しなあかん原稿とかあったりするんで",
+    exampleReading: "らいしゅうまでにていしゅつしなあかんげんこうとかあったりするんで",
+    exampleTranslation: "다음 주까지 제출해야 하는 원고 같은 게 있어서",
+    startTime: 166.08,
+    vocabulary: [
+      { word: "提出", reading: "ていしゅつ", meaning: "제출" },
+      { word: "原稿", reading: "げんこう", meaning: "원고" },
+    ],
+  },
+  {
+    expression: "設計周り",
+    expressionReading: "せっけいまわり",
+    meaning: "설계 관련, 설계 부분",
+    example: "あとは設計周りの勉強ですね、これやっていきたいと思います",
+    exampleReading: "あとはせっけいまわりのべんきょうですね、これやっていきたいとおもいます",
+    exampleTranslation: "그리고 설계 관련 공부요, 이걸 해나가고 싶습니다",
+    startTime: 168.80,
+    vocabulary: [
+      { word: "設計", reading: "せっけい", meaning: "설계" },
+      { word: "周り", reading: "まわり", meaning: "주변, 관련" },
+    ],
+  },
+  {
+    expression: "外資で働く",
+    expressionReading: "がいしではたらく",
+    meaning: "외국계 기업에서 일하다",
+    example: "後々ね外資で働きたいっていう思いがあるので英語を喋る練習としてね最近再開した",
+    exampleReading: "のちのちねがいしではたらきたいっていうおもいがあるのでえいごをしゃべるれんしゅうとしてねさいきんさいかいした",
+    exampleTranslation: "나중에 외국계에서 일하고 싶다는 생각이 있어서 영어 말하기 연습으로 최근 재개했다",
+    startTime: 680.48,
+    vocabulary: [
+      { word: "外資", reading: "がいし", meaning: "외자, 외국계" },
+      { word: "再開", reading: "さいかい", meaning: "재개" },
+    ],
+  },
+];

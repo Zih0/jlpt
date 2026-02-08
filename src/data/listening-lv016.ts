@@ -1,0 +1,108 @@
+import type { ListeningExpression } from "@/lib/types";
+
+export const lv016Expressions: ListeningExpression[] = [
+  {
+    expression: "投稿頻度",
+    expressionReading: "とうこうひんど",
+    meaning: "게시 빈도, 업로드 빈도",
+    example: "圧倒的に投稿頻度が少ないっていうことですよね",
+    exampleReading: "あっとうてきにとうこうひんどがすくないっていうことですよね",
+    exampleTranslation: "압도적으로 업로드 빈도가 적다는 거잖아요",
+    startTime: 164.64,
+    vocabulary: [
+      { word: "圧倒的に", reading: "あっとうてきに", meaning: "압도적으로" },
+      { word: "少ない", reading: "すくない", meaning: "적다" },
+    ],
+  },
+  {
+    expression: "事業規模拡大",
+    expressionReading: "じぎょうきぼかくだい",
+    meaning: "사업 규모 확대",
+    example: "テックワールドの事業規模拡大というこの2つなんですけど",
+    exampleReading: "テックワールドのじぎょうきぼかくだいというこのふたつなんですけど",
+    exampleTranslation: "테크월드의 사업 규모 확대라는 이 두 가지인데요",
+    startTime: 137.46,
+    vocabulary: [
+      { word: "事業", reading: "じぎょう", meaning: "사업" },
+      { word: "規模", reading: "きぼ", meaning: "규모" },
+      { word: "拡大", reading: "かくだい", meaning: "확대" },
+    ],
+  },
+  {
+    expression: "結果にこだわる",
+    expressionReading: "けっかにこだわる",
+    meaning: "결과에 집착하다, 결과를 추구하다",
+    example: "社会人も2年目ということである程度ね結果にこだわりたいと思ってます",
+    exampleReading: "しゃかいじんもにねんめということであるていどねけっかにこだわりたいとおもってます",
+    exampleTranslation: "직장인 2년 차이니 어느 정도 결과에 집착하고 싶습니다",
+    startTime: 130.14,
+    vocabulary: [
+      { word: "社会人", reading: "しゃかいじん", meaning: "직장인, 사회인" },
+      { word: "ある程度", reading: "あるていど", meaning: "어느 정도" },
+    ],
+  },
+  {
+    expression: "買い切りプラン",
+    expressionReading: "かいきりぷらん",
+    meaning: "일회성 구매 플랜 (구독이 아닌 한 번 결제)",
+    example: "僕とねこう相談しながら決めていくみたいなプランを買い切りプランで提供したので",
+    exampleReading: "ぼくとねこうそうだんしながらきめていくみたいなぷらんをかいきりぷらんでていきょうしたので",
+    exampleTranslation: "저와 상담하면서 정해나가는 플랜을 일회성 구매 플랜으로 제공했으니까",
+    startTime: 334.62,
+    vocabulary: [
+      { word: "提供", reading: "ていきょう", meaning: "제공" },
+      { word: "相談", reading: "そうだん", meaning: "상담" },
+    ],
+  },
+  {
+    expression: "添削",
+    expressionReading: "てんさく",
+    meaning: "첨삭, 교정 (글이나 코드를 수정·피드백하는 것)",
+    example: "それを解いてもらって僕が添削して全て質問対応するみたいなのを月額5000円でやってたんですけど",
+    exampleReading: "それをといてもらってぼくがてんさくしてすべてしつもんたいおうするみたいなのをげつがくごせんえんでやってたんですけど",
+    exampleTranslation: "그걸 풀어주시면 제가 첨삭하고 모든 질문 대응을 하는 걸 월 5000엔에 했었는데",
+    startTime: 309.00,
+    vocabulary: [
+      { word: "月額", reading: "げつがく", meaning: "월액, 월 요금" },
+      { word: "質問対応", reading: "しつもんたいおう", meaning: "질문 대응" },
+    ],
+  },
+  {
+    expression: "伏せる",
+    expressionReading: "ふせる",
+    meaning: "숨기다, 비공개하다",
+    example: "一応ね会社名は伏せさせていただくんですけど",
+    exampleReading: "いちおうねかいしゃめいはふせさせていただくんですけど",
+    exampleTranslation: "일단 회사명은 비공개로 하겠습니다만",
+    startTime: 436.20,
+    vocabulary: [
+      { word: "会社名", reading: "かいしゃめい", meaning: "회사명" },
+      { word: "一応", reading: "いちおう", meaning: "일단, 일응" },
+    ],
+  },
+  {
+    expression: "メンタリング",
+    expressionReading: "めんたりんぐ",
+    meaning: "멘토링 (경험자가 학습자를 지도하는 것)",
+    example: "Java基礎のコースに加えて2回のメンタリングですね30分2回の面談をして",
+    exampleReading: "Javaきそのこーすにくわえてにかいのめんたりんぐですねさんじゅっぷんにかいのめんだんをして",
+    exampleTranslation: "Java 기초 코스에 더해 2회 멘토링, 30분씩 2회 면담을 하고",
+    startTime: 323.58,
+    vocabulary: [
+      { word: "加えて", reading: "くわえて", meaning: "더하여" },
+      { word: "面談", reading: "めんだん", meaning: "면담" },
+    ],
+  },
+  {
+    expression: "需要",
+    expressionReading: "じゅよう",
+    meaning: "수요, 니즈",
+    example: "どれぐらい需要があるかっていうのがわからないので",
+    exampleReading: "どれぐらいじゅようがあるかっていうのがわからないので",
+    exampleTranslation: "얼마나 수요가 있는지 모르겠어서",
+    startTime: 255.84,
+    vocabulary: [
+      { word: "需要", reading: "じゅよう", meaning: "수요" },
+    ],
+  },
+];
