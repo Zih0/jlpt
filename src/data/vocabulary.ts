@@ -8,6 +8,7 @@ import { vocabularyBatch6 } from "./vocabulary-batch6";
 import { vocabularyBatch7 } from "./vocabulary-batch7";
 import { vocabularyBatch8 } from "./vocabulary-batch8";
 import { vocabularyBatch9 } from "./vocabulary-batch9";
+import { vocabularyBatchOnomatopoeia } from "./vocabulary-batch-onomatopoeia";
 
 export const vocabularyData: VocabularyItem[] = [
   ...vocabularyBatch1,
@@ -19,4 +20,5 @@ export const vocabularyData: VocabularyItem[] = [
   ...vocabularyBatch7,
   ...vocabularyBatch8,
   ...vocabularyBatch9,
+  ...vocabularyBatchOnomatopoeia,
 ];

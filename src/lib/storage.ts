@@ -30,7 +30,10 @@ function setItem<T>(key: string, value: T): void {
   if (typeof window === "undefined") return;
   try {
     localStorage.setItem(key, JSON.stringify(value));
-  } catch {
+  } catch (e) {
+    if (e instanceof DOMException && e.name === 'QuotaExceededError') {
+      console.warn('localStorage quota exceeded for key:', key);
+    }
     // localStorage full or unavailable
   }
 }
@@ -135,8 +138,13 @@ function getListeningFavorites(): Record<string, number[]> {
     const key = localStorage.key(i);
     if (key?.startsWith("listening-fav-")) {
       try {
-        favs[key] = JSON.parse(localStorage.getItem(key) || "[]");
-      } catch { /* skip */ }
+        const stored = localStorage.getItem(key);
+        favs[key] = stored ? JSON.parse(stored) : [];
+      } catch (e) {
+        // Corrupted data - remove it and skip
+        console.warn(`Failed to parse listening favorites for key: ${key}`, e);
+        if (key) localStorage.removeItem(key);
+      }
     }
   }
   return favs;

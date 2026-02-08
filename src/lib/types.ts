@@ -19,6 +19,7 @@ export interface VocabularyItem {
   exampleSentenceMeaning: string;
   category: string;
   frequencyRank: number;
+  pitchAccent?: number; // 0=平板, 1=頭高, 2+=中高/尾高 (accent on nth mora)
 }
 
 export interface GrammarPattern {
@@ -34,6 +35,7 @@ export interface GrammarPattern {
   }[];
   similarPatterns: string[];
   notes: string;
+  writingPrompt?: string; // Korean writing prompt suggestion
 }
 
 export interface ReadingPassage {

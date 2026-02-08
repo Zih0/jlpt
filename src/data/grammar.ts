@@ -26,6 +26,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g002", "g003"],
     notes: "실현 불가능하거나 어려운 소망을 나타낸다. ～たい와 함께 자주 쓰인다.",
+    writingPrompt: "실현하기 어려운 소망을 표현하는 짧은 글을 써보세요.",
   },
   {
     id: "g002",
@@ -47,6 +48,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g001", "g005"],
     notes: "～けど보다 격식 있는 표현. 결과가 기대와 다를 때 사용한다.",
+    writingPrompt: "노력했지만 기대에 미치지 못한 경험에 대해 써보세요.",
   },
   {
     id: "g003",
@@ -173,6 +175,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: [],
     notes: "어떤 일이 먼저 일어나야 다음 일이 가능함을 강조한다.",
+    writingPrompt: "신중한 결정이 필요했던 상황에 대해 써보세요.",
   },
   {
     id: "g009",
@@ -194,6 +197,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g010"],
     notes: "격식 있는 표현. する는 せざるを得ない로 변한다(불규칙).",
+    writingPrompt: "어쩔 수 없이 해야 했던 경험에 대해 써보세요.",
   },
   {
     id: "g010",
@@ -215,6 +219,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g009"],
     notes: "외부 강제가 아닌 사회적 규범이나 양심에 의한 의무감을 나타낸다.",
+    writingPrompt: "사회적 책임 때문에 해야 했던 일에 대해 써보세요.",
   },
   {
     id: "g011",
@@ -278,6 +283,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: [],
     notes: "어떤 행동이 무의미함을 나타낸다. 결과절은 항상 부정적이다.",
+    writingPrompt: "노력해도 소용없었던 경험을 표현해 보세요.",
   },
   {
     id: "g014",
@@ -299,6 +305,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: [],
     notes: "て형의 경험이나 행동이 새로운 깨달음이나 최초의 경험으로 이어질 때 사용한다.",
+    writingPrompt: "중요한 깨달음을 얻게 된 계기에 대해 써보세요.",
   },
   {
     id: "g015",
@@ -341,6 +348,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g002"],
     notes: "대조를 나타내는 격식 있는 표현. ～のに보다 강하다.",
+    writingPrompt: "예상치 못한 결과에 대해 논리적으로 설명해 보세요.",
   },
   {
     id: "g017",
@@ -383,6 +391,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g009"],
     notes: "억제할 수 없는 감정적 반응을 나타낸다. 의무보다 감정에 관한 표현.",
+    writingPrompt: "억누를 수 없었던 감정에 대해 솔직하게 써보세요.",
   },
   {
     id: "g019",
@@ -446,6 +455,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: [],
     notes: "진행 중인 점진적 변화를 나타낸다. ～ている보다 격식 있는 표현.",
+    writingPrompt: "사회나 환경의 점진적 변화에 대해 분석해 보세요.",
   },
   {
     id: "g022",
@@ -850,6 +860,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g039", "g021"],
     notes: "알면서도 반대 행동을 하는 갈등을 나타낸다. つつある（진행）과 혼동 주의. 문어적 표현.",
+    writingPrompt: "알면서도 멈출 수 없었던 행동에 대해 솔직하게 써보세요.",
   },
   {
     id: "g041",
@@ -892,6 +903,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g043", "g044"],
     notes: "문어체의 격식 있는 이유 표현. ~がゆえに는 강조형. から·ので보다 문학적이다.",
+    writingPrompt: "어떤 믿음이나 가치관 때문에 한 선택에 대해 써보세요.",
   },
   {
     id: "g043",
@@ -913,6 +925,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g042"],
     notes: "특별한 상황이므로 당연한 결과가 따름을 나타낸다. 객관적인 사실에 대해 사용한다.",
+    writingPrompt: "특별한 상황에서 벌어진 일을 설명해 보세요.",
   },
   {
     id: "g044",
@@ -1207,6 +1220,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g056", "g058"],
     notes: "극단적인 것은 물론이고 당연한 것조차 못 한다는 뉘앙스. 부정적 문맥에서 주로 사용한다.",
+    writingPrompt: "기본적인 것조차 못했던 상황을 강조하여 표현해 보세요.",
   },
   {
     id: "g058",
@@ -1291,6 +1305,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g060"],
     notes: "~ために의 격식 있는 문어적 표현. する→すべく가 일반적이지만 するべく도 허용.",
+    writingPrompt: "중요한 목표를 위해 노력했던 경험을 격식 있게 서술해 보세요.",
   },
   {
     id: "g062",
@@ -1459,6 +1474,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: [],
     notes: "좋지 않은 결과에 이르게 된 상황을 한탄하는 표현. 부정적 결과에만 사용한다.",
+    writingPrompt: "상황이 점점 나빠진 경험을 단계별로 설명해 보세요.",
   },
   {
     id: "g070",
@@ -1480,6 +1496,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g010"],
     notes: "자신이 한 말이나 행동 때문에 체면상 어쩔 수 없이 해야 하는 상황을 나타낸다.",
+    writingPrompt: "자신의 말이나 약속 때문에 어쩔 수 없이 한 일에 대해 써보세요.",
   },
   {
     id: "g071",
@@ -1501,6 +1518,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g038"],
     notes: "최고 수준까지는 아니지만 어느 정도는 됨을 나타낸다. 양보와 기대 수준 조절의 뉘앙스.",
+    writingPrompt: "완벽하지 않아도 만족스러웠던 결과에 대해 써보세요.",
   },
   {
     id: "g072",
@@ -1522,6 +1540,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g018"],
     notes: "감정을 억누를 수 없음을 나타내는 매우 격식 있는 표현. 驚き·怒り·同情·涙 등 감정 명사와 쓰인다.",
+    writingPrompt: "강렬한 감정을 느꼈던 순간에 대해 격식 있게 표현해 보세요.",
   },
   {
     id: "g073",
@@ -1585,6 +1604,7 @@ export const grammarData: GrammarPattern[] = [
     ],
     similarPatterns: ["g013"],
     notes: "일단 ~하면 되돌릴 수 없는 (주로 나쁜) 결과가 따른다는 뉘앙스. 부정적 문맥에서 사용한다.",
+    writingPrompt: "되돌릴 수 없는 선택의 결과에 대해 써보세요.",
   },
   {
     id: "g076",

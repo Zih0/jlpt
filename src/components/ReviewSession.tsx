@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback, ReactNode } from "react";
+import { useState, useEffect, useCallback, useRef, ReactNode } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
@@ -58,6 +58,8 @@ interface ReviewSessionProps {
   backLabel: string;
   renderFront: (contentId: string) => ReactNode;
   renderBack: (contentId: string) => ReactNode;
+  renderReverseFront?: (contentId: string) => ReactNode;
+  renderReverseBack?: (contentId: string) => ReactNode;
   onShowAnswer?: (contentId: string) => void;
   crossModuleDue?: { label: string; href: string; count: number }[];
   /** Set of valid content IDs to filter out orphaned review cards */
@@ -72,6 +74,8 @@ export default function ReviewSession({
   backLabel,
   renderFront,
   renderBack,
+  renderReverseFront,
+  renderReverseBack,
   onShowAnswer,
   crossModuleDue,
   validContentIds,
@@ -85,6 +89,9 @@ export default function ReviewSession({
   const [correct, setCorrect] = useState(0);
   const [newCards, setNewCards] = useState(0);
   const [done, setDone] = useState(false);
+  const [cardKey, setCardKey] = useState(0);
+  const [reverseMode, setReverseMode] = useState(false);
+  const isRating = useRef(false);
 
   useEffect(() => {
     const settings = getSettings();
@@ -109,6 +116,12 @@ export default function ReviewSession({
     const combined = [...due, ...newReviewCards];
     setQueue(combined);
     setTotalCards(combined.length);
+
+    // Load reverse mode preference from localStorage
+    const stored = localStorage.getItem("reviewReverseMode");
+    if (stored) {
+      setReverseMode(stored === "true");
+    }
   }, [contentType, contentData, dailyNewKey, validContentIds]);
 
   const currentCard = queue[currentIndex];
@@ -122,7 +135,9 @@ export default function ReviewSession({
 
   const handleRate = useCallback(
     (rating: SRSRating) => {
-      if (!currentCard) return;
+      if (!currentCard || isRating.current) return;
+      isRating.current = true;
+
       const updated = reviewCard(currentCard, rating);
       upsertReviewCard(updated);
       setReviewed((r) => r + 1);
@@ -132,6 +147,8 @@ export default function ReviewSession({
       if (currentIndex + 1 < queue.length) {
         setCurrentIndex((i) => i + 1);
         setShowAnswer(false);
+        setCardKey((k) => k + 1);
+        isRating.current = false;
       } else {
         setDone(true);
         updateStreak();
@@ -142,6 +159,7 @@ export default function ReviewSession({
           cardsCorrect: correct + (rating > 0 ? 1 : 0),
           newCardsStudied: newCards + (currentCard.totalReviews === 0 ? 1 : 0),
         });
+        isRating.current = false;
       }
     },
     [
@@ -258,8 +276,23 @@ export default function ReviewSession({
 
   const progress = totalCards > 0 ? ((currentIndex + 1) / totalCards) * 100 : 0;
 
+  const toggleReverseMode = () => {
+    const newMode = !reverseMode;
+    setReverseMode(newMode);
+    localStorage.setItem("reviewReverseMode", String(newMode));
+  };
+
+  const effectiveFront = reverseMode && renderReverseFront ? renderReverseFront : renderFront;
+  const effectiveBack = reverseMode && renderReverseBack ? renderReverseBack : renderBack;
+
   return (
     <div className="max-w-md mx-auto">
+      <style>{`
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
+      `}</style>
       <div className="flex items-center justify-between mb-4">
         <span
           className="text-body-sm"
@@ -289,21 +322,37 @@ export default function ReviewSession({
         </button>
       </div>
 
-      <div
-        className="w-full h-2 rounded-full mb-8"
-        style={{ backgroundColor: "var(--bg-tertiary)" }}
-      >
+      <div className="flex items-center gap-3 mb-4">
         <div
-          className="h-full rounded-full"
-          style={{ width: `${progress}%`, backgroundColor: "var(--primary)" }}
-        />
+          className="flex-1 h-2 rounded-full"
+          style={{ backgroundColor: "var(--bg-tertiary)" }}
+        >
+          <div
+            className="h-full rounded-full"
+            style={{ width: `${progress}%`, backgroundColor: "var(--primary)" }}
+          />
+        </div>
+        {(renderReverseFront || renderReverseBack) && (
+          <button
+            onClick={toggleReverseMode}
+            className="px-3 h-7 rounded text-caption font-medium shrink-0"
+            style={{
+              backgroundColor: reverseMode ? "var(--primary-light)" : "var(--bg-tertiary)",
+              color: reverseMode ? "var(--primary)" : "var(--text-secondary)",
+            }}
+          >
+            {reverseMode ? "리콜" : "인식"}
+          </button>
+        )}
       </div>
 
       <div
+        key={cardKey}
         className="rounded-lg border p-6 min-h-[300px] flex flex-col"
         style={{
           backgroundColor: "var(--bg-secondary)",
           borderColor: "var(--border)",
+          animation: "fadeIn 200ms ease-out",
         }}
       >
         {!showAnswer ? (
@@ -314,7 +363,7 @@ export default function ReviewSession({
             tabIndex={0}
             aria-label="Tap to show answer"
           >
-            {renderFront(currentCard.contentId)}
+            {effectiveFront(currentCard.contentId)}
             <p
               className="text-body-sm mt-6"
               style={{ color: "var(--text-tertiary)" }}
@@ -324,7 +373,7 @@ export default function ReviewSession({
           </div>
         ) : (
           <div className="flex-1 flex flex-col">
-            {renderBack(currentCard.contentId)}
+            {effectiveBack(currentCard.contentId)}
           </div>
         )}
       </div>

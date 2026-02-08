@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useCallback, useRef } from "react";
+import { useState, useMemo, useCallback, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { readingData } from "@/data/reading";
 import { vocabularyData } from "@/data/vocabulary";
@@ -32,6 +32,19 @@ export default function ReadingDetailClient({ id }: { id: string }) {
     const cards = getReviewCards();
     return new Set(cards.map((c) => c.contentId));
   });
+  const [aiDropdownOpen, setAiDropdownOpen] = useState(false);
+  const aiDropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!aiDropdownOpen) return;
+    const handleClick = (e: MouseEvent) => {
+      if (aiDropdownRef.current && !aiDropdownRef.current.contains(e.target as Node)) {
+        setAiDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClick);
+    return () => document.removeEventListener("mousedown", handleClick);
+  }, [aiDropdownOpen]);
 
   // Find vocabulary items that appear in the passage content (3+ char words for highlighting to avoid over-matching)
   const passageVocab = useMemo<VocabularyItem[]>(() => {
@@ -292,14 +305,86 @@ export default function ReadingDetailClient({ id }: { id: string }) {
 
   return (
     <div className="max-w-2xl mx-auto space-y-4">
-      {/* Back */}
-      <button
-        onClick={() => router.push("/reading")}
-        className="text-body-sm font-medium"
-        style={{ color: "var(--primary)" }}
-      >
-        &larr; 독해
-      </button>
+      {/* Back + AI dropdown */}
+      <div className="flex items-center justify-between">
+        <button
+          onClick={() => router.push("/reading")}
+          className="text-body-sm font-medium"
+          style={{ color: "var(--primary)" }}
+        >
+          &larr; 독해
+        </button>
+
+        <div className="relative" ref={aiDropdownRef}>
+          <button
+            onClick={() => setAiDropdownOpen(!aiDropdownOpen)}
+            className="inline-flex items-center gap-1.5 h-9 px-3 rounded-lg border text-body-sm font-medium"
+            style={{
+              borderColor: "var(--border)",
+              color: "var(--text-secondary)",
+              backgroundColor: "var(--bg-secondary)",
+            }}
+          >
+            AI 해설
+            <span
+              className="transition-transform"
+              style={{
+                display: "inline-block",
+                transform: aiDropdownOpen ? "rotate(180deg)" : "rotate(0deg)",
+                fontSize: "10px",
+              }}
+            >
+              &#9660;
+            </span>
+          </button>
+          {aiDropdownOpen && (
+            <div
+              className="absolute right-0 mt-1 w-52 rounded-lg border shadow-lg z-50 py-1"
+              style={{
+                backgroundColor: "var(--bg-primary)",
+                borderColor: "var(--border)",
+              }}
+            >
+              <a
+                href={`https://chatgpt.com/?prompt=${encodeURIComponent(`Read ${typeof window !== "undefined" ? window.location.href : ""}, JLPT 학습을 위한 해설`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-4 py-2.5 text-body-sm hover:opacity-70"
+                style={{ color: "var(--text-primary)" }}
+                onClick={() => setAiDropdownOpen(false)}
+              >
+                <span className="flex items-center gap-2.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M22.282 9.821a5.985 5.985 0 0 0-.516-4.91 6.046 6.046 0 0 0-6.51-2.9A6.065 6.065 0 0 0 4.981 4.18a5.985 5.985 0 0 0-3.998 2.9 6.046 6.046 0 0 0 .743 7.097 5.98 5.98 0 0 0 .51 4.911 6.051 6.051 0 0 0 6.515 2.9A5.985 5.985 0 0 0 13.26 24a6.056 6.056 0 0 0 5.772-4.206 5.99 5.99 0 0 0 3.997-2.9 6.056 6.056 0 0 0-.747-7.073zM13.26 22.43a4.476 4.476 0 0 1-2.876-1.04l.141-.081 4.779-2.758a.795.795 0 0 0 .392-.681v-6.737l2.02 1.168a.071.071 0 0 1 .038.052v5.583a4.504 4.504 0 0 1-4.494 4.494zM3.6 18.304a4.47 4.47 0 0 1-.535-3.014l.142.085 4.783 2.759a.771.771 0 0 0 .78 0l5.843-3.369v2.332a.08.08 0 0 1-.033.062L9.74 19.95a4.5 4.5 0 0 1-6.14-1.646zM2.34 7.896a4.485 4.485 0 0 1 2.366-1.973V11.6a.766.766 0 0 0 .388.676l5.815 3.355-2.02 1.168a.076.076 0 0 1-.071 0l-4.83-2.786A4.504 4.504 0 0 1 2.34 7.872zm16.597 3.855l-5.833-3.387L15.119 7.2a.076.076 0 0 1 .071 0l4.83 2.791a4.494 4.494 0 0 1-.676 8.105v-5.678a.79.79 0 0 0-.407-.667zm2.01-3.023l-.141-.085-4.774-2.782a.776.776 0 0 0-.785 0L9.409 9.23V6.897a.066.066 0 0 1 .028-.061l4.83-2.787a4.5 4.5 0 0 1 6.68 4.66zm-12.64 4.135l-2.02-1.164a.08.08 0 0 1-.038-.057V6.075a4.5 4.5 0 0 1 7.375-3.453l-.142.08L8.704 5.46a.795.795 0 0 0-.393.681zm1.097-2.365l2.602-1.5 2.607 1.5v2.999l-2.597 1.5-2.607-1.5z" fill="currentColor"/>
+                  </svg>
+                  Open in ChatGPT
+                </span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: "var(--text-tertiary)" }}>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+              <a
+                href={`https://claude.ai/new?q=${encodeURIComponent(`Read ${typeof window !== "undefined" ? window.location.href : ""}, JLPT 학습을 위한 해설`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between px-4 py-2.5 text-body-sm hover:opacity-70"
+                style={{ color: "var(--text-primary)" }}
+                onClick={() => setAiDropdownOpen(false)}
+              >
+                <span className="flex items-center gap-2.5">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                    <path d="M4.709 15.955l4.72-10.478a.862.862 0 0 1 1.575 0l4.72 10.478M16.29 15.955l-1.677-3.723M7.71 15.955l1.677-3.723m4.226 0H9.387m10.478-3.464L16.4 15.955m-2.932-7.187h.532m-4.2 7.187h8.065" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                  Open in Claude
+                </span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{ color: "var(--text-tertiary)" }}>
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                </svg>
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
 
       {!showQuestions ? (
         <>
@@ -380,34 +465,38 @@ export default function ReadingDetailClient({ id }: { id: string }) {
             </div>
 
             {/* Vocabulary Tooltip (fixed position to avoid scroll offset issues) */}
-            {tooltipWord && tooltipPosition && vocabMap.has(tooltipWord) && (
-              <div
-                className="fixed z-50 p-3 rounded-lg border shadow-lg"
-                style={{
-                  backgroundColor: "var(--bg-secondary)",
-                  borderColor: "var(--border)",
-                  top: tooltipPosition.y + 8,
-                  left: Math.min(tooltipPosition.x, window.innerWidth - 160),
-                  transform: "translateX(-50%)",
-                  maxWidth: "280px",
-                }}
-                onClick={(e) => e.stopPropagation()}
-              >
-                <div className="text-body-sm font-jp font-bold mb-1" lang="ja">
-                  {tooltipWord}
-                </div>
+            {tooltipWord && tooltipPosition && vocabMap.has(tooltipWord) && (() => {
+              const entry = vocabMap.get(tooltipWord);
+              if (!entry) return null;
+              return (
                 <div
-                  className="text-body-sm font-jp mb-1"
-                  lang="ja"
-                  style={{ color: "var(--text-secondary)" }}
+                  className="fixed z-50 p-3 rounded-lg border shadow-lg"
+                  style={{
+                    backgroundColor: "var(--bg-secondary)",
+                    borderColor: "var(--border)",
+                    top: tooltipPosition.y + 8,
+                    left: Math.min(tooltipPosition.x, window.innerWidth - 160),
+                    transform: "translateX(-50%)",
+                    maxWidth: "280px",
+                  }}
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  {vocabMap.get(tooltipWord)!.reading}
+                  <div className="text-body-sm font-jp font-bold mb-1" lang="ja">
+                    {tooltipWord}
+                  </div>
+                  <div
+                    className="text-body-sm font-jp mb-1"
+                    lang="ja"
+                    style={{ color: "var(--text-secondary)" }}
+                  >
+                    {entry.reading}
+                  </div>
+                  <div className="text-body-sm">
+                    {entry.meaning}
+                  </div>
                 </div>
-                <div className="text-body-sm">
-                  {vocabMap.get(tooltipWord)!.meaning}
-                </div>
-              </div>
-            )}
+              );
+            })()}
           </div>
 
           <button

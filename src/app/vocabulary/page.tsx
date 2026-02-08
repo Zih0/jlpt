@@ -17,6 +17,11 @@ const stageLabelKo: Record<SRSStage | "all" | "struggling", string> = {
   mature: "완료",
 };
 
+const categoryLabelKo: Record<string, string> = {
+  "daily life": "일상",
+  "onomatopoeia": "의성어/의태어",
+};
+
 export default function VocabularyPage() {
   const [search, setSearch] = useState("");
   const [stageFilter, setStageFilter] = useState<SRSStage | "all" | "struggling">("all");
@@ -169,7 +174,7 @@ export default function VocabularyPage() {
           <button
             key={cat}
             onClick={() => startTransition(() => setCategoryFilter(cat))}
-            className="h-9 px-3 rounded-lg text-body-sm font-medium whitespace-nowrap border capitalize"
+            className="h-9 px-3 rounded-lg text-body-sm font-medium whitespace-nowrap border"
             style={{
               backgroundColor:
                 categoryFilter === cat ? "var(--accent)" : "var(--bg-secondary)",
@@ -178,7 +183,7 @@ export default function VocabularyPage() {
                 categoryFilter === cat ? "var(--accent)" : "var(--border)",
             }}
           >
-            {cat}
+            {categoryLabelKo[cat] || cat}
           </button>
         ))}
       </div>

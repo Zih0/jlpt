@@ -111,13 +111,23 @@ export default function VocabDetailClient({ id }: { id: string }) {
                 </button>
               )}
             </div>
-            <p
-              className="text-reading font-jp mt-1"
-              lang="ja"
-              style={{ color: "var(--text-secondary)" }}
-            >
-              {item.reading}
-            </p>
+            <div className="flex items-center gap-2 mt-1">
+              <p
+                className="text-reading font-jp"
+                lang="ja"
+                style={{ color: "var(--text-secondary)" }}
+              >
+                {item.reading}
+              </p>
+              {item.pitchAccent !== undefined && (
+                <span
+                  className="text-caption font-medium"
+                  style={{ color: "var(--text-tertiary)" }}
+                >
+                  [アクセント: {item.pitchAccent === 0 ? "⓪" : ["①", "②", "③", "④", "⑤", "⑥", "⑦", "⑧", "⑨"][item.pitchAccent - 1] || `${item.pitchAccent}型`}]
+                </span>
+              )}
+            </div>
             <p className="text-h3 mt-2">{item.meaning}</p>
           </div>
           <div className="flex flex-col items-end gap-2 shrink-0">

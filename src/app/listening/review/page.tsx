@@ -111,6 +111,52 @@ export default function ListeningReviewPage() {
     [findExpr]
   );
 
+  const renderReverseFront = useCallback(
+    (contentId: string) => {
+      const expr = findExpr(contentId);
+      if (!expr) return null;
+      return (
+        <p className="text-h2 text-center">
+          {expr.meaning}
+        </p>
+      );
+    },
+    [findExpr]
+  );
+
+  const renderReverseBack = useCallback(
+    (contentId: string) => {
+      const expr = findExpr(contentId);
+      if (!expr) return null;
+      return (
+        <>
+          <p className="text-body mb-3">{expr.meaning}</p>
+          <p className="text-kanji font-jp" lang="ja" style={{ fontSize: "28px" }}>
+            {expr.expression}
+          </p>
+          <p className="text-reading font-jp mt-1" lang="ja" style={{ color: "var(--text-secondary)" }}>
+            {expr.expressionReading}
+          </p>
+          <div
+            className="mt-4 pt-4 border-t"
+            style={{ borderColor: "var(--border)" }}
+          >
+            <p className="text-jp-body font-jp" lang="ja">
+              {expr.example}
+            </p>
+            <p className="text-body-sm mt-1" style={{ color: "var(--text-tertiary)" }}>
+              {expr.exampleReading}
+            </p>
+            <p className="text-body-sm mt-1" style={{ color: "var(--text-secondary)" }}>
+              {expr.exampleTranslation}
+            </p>
+          </div>
+        </>
+      );
+    },
+    [findExpr]
+  );
+
   return (
     <ReviewSession
       contentType="listening"
@@ -121,6 +167,8 @@ export default function ListeningReviewPage() {
       crossModuleDue={crossDue}
       renderFront={renderFront}
       renderBack={renderBack}
+      renderReverseFront={renderReverseFront}
+      renderReverseBack={renderReverseBack}
     />
   );
 }

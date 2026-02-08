@@ -165,6 +165,22 @@ export default function GrammarDetailClient({ id }: { id: string }) {
           </p>
         </div>
       )}
+
+      {/* Writing Prompt */}
+      {pattern.writingPrompt && (
+        <div
+          className="p-4 rounded-lg border"
+          style={{
+            backgroundColor: "var(--bg-secondary)",
+            borderColor: "var(--border)",
+          }}
+        >
+          <h2 className="text-h3 mb-2">작문 연습</h2>
+          <p className="text-body leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+            {pattern.writingPrompt}
+          </p>
+        </div>
+      )}
     </div>
   );
 }

@@ -96,6 +96,65 @@ export default function GrammarReviewPage() {
     );
   }, [supported, speak]);
 
+  const renderReverseFront = useCallback((contentId: string) => {
+    const item = findItem(contentId);
+    if (!item) return null;
+    return (
+      <p className="text-h2 text-center">
+        {item.meaning}
+      </p>
+    );
+  }, []);
+
+  const renderReverseBack = useCallback((contentId: string) => {
+    const item = findItem(contentId);
+    if (!item) return null;
+    return (
+      <>
+        <p className="text-body mb-3">{item.meaning}</p>
+        <p className="text-h3 font-jp" lang="ja">
+          {item.pattern}
+        </p>
+        <div
+          className="mt-3 p-2 rounded-lg"
+          style={{ backgroundColor: "var(--bg-tertiary)" }}
+        >
+          <p className="text-body-sm">{item.formation}</p>
+        </div>
+        <div
+          className="mt-4 pt-4 border-t space-y-2"
+          style={{ borderColor: "var(--border)" }}
+        >
+          {item.examples.slice(0, 2).map((ex, i) => (
+            <div key={i}>
+              <div className="flex items-center gap-2">
+                <p className="text-body-sm font-jp" lang="ja">
+                  {ex.japanese}
+                </p>
+                {supported && (
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      speak(ex.japanese);
+                    }}
+                    className="text-body-sm shrink-0"
+                    style={{ color: "var(--text-secondary)" }}
+                    aria-label="Play example sentence"
+                  >
+                    &#x1f50a;
+                  </button>
+                )}
+              </div>
+              <p className="text-caption" style={{ color: "var(--text-tertiary)" }}>
+                {ex.translation}
+              </p>
+            </div>
+          ))}
+        </div>
+      </>
+    );
+  }, [supported, speak]);
+
   return (
     <ReviewSession
       contentType="grammar"
@@ -107,6 +166,8 @@ export default function GrammarReviewPage() {
       crossModuleDue={crossDue}
       renderFront={renderFront}
       renderBack={renderBack}
+      renderReverseFront={renderReverseFront}
+      renderReverseBack={renderReverseBack}
     />
   );
 }

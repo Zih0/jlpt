@@ -105,6 +105,17 @@ export default function GrammarPage() {
             혼동 연습
           </Link>
           <Link
+            href="/grammar/keigo-drill"
+            className="inline-flex items-center h-11 px-5 rounded-lg text-body-sm font-semibold border"
+            style={{
+              backgroundColor: "var(--bg-secondary)",
+              borderColor: "var(--border)",
+              color: "var(--text-primary)",
+            }}
+          >
+            경어 연습
+          </Link>
+          <Link
             href="/grammar/review"
             className="inline-flex items-center h-11 px-5 rounded-lg text-body-sm font-semibold text-white"
             style={{ backgroundColor: "var(--primary)" }}
@@ -231,7 +242,7 @@ export default function GrammarPage() {
                   )}
                 </div>
               </div>
-              {item.examples.length > 0 && (
+              {item.examples.length > 0 && item.examples[0] && (
                 <div
                   className="mt-2 p-2 rounded"
                   style={{ backgroundColor: "var(--bg-tertiary)" }}

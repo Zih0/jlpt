@@ -113,6 +113,73 @@ export default function VocabularyReviewPage() {
     );
   }, [supported, speak]);
 
+  const renderReverseFront = useCallback((contentId: string) => {
+    const item = findItem(contentId);
+    if (!item) return null;
+    return (
+      <p className="text-h2 text-center">
+        {item.meaning}
+      </p>
+    );
+  }, []);
+
+  const renderReverseBack = useCallback((contentId: string) => {
+    const item = findItem(contentId);
+    if (!item) return null;
+    return (
+      <>
+        <p className="text-h3 mb-3">{item.meaning}</p>
+        <div className="flex items-center gap-2">
+          <p className="text-kanji font-jp" lang="ja" style={{ fontSize: "28px" }}>
+            {item.word}
+          </p>
+          {supported && (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                speak(item.word);
+              }}
+              className="text-body-sm shrink-0"
+              style={{ color: "var(--text-secondary)" }}
+              aria-label={`Play pronunciation of ${item.word}`}
+            >
+              &#x1f50a;
+            </button>
+          )}
+        </div>
+        <p className="text-reading font-jp mt-1" lang="ja" style={{ color: "var(--text-secondary)" }}>
+          {item.reading}
+        </p>
+        <div
+          className="mt-4 pt-4 border-t"
+          style={{ borderColor: "var(--border)" }}
+        >
+          <div className="flex items-center gap-2">
+            <p className="text-jp-body font-jp" lang="ja">
+              {item.exampleSentence}
+            </p>
+            {supported && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  speak(item.exampleSentence);
+                }}
+                className="text-body-sm shrink-0"
+                style={{ color: "var(--text-secondary)" }}
+                aria-label="Play example sentence"
+              >
+                &#x1f50a;
+              </button>
+            )}
+          </div>
+          <p className="text-body-sm mt-1" style={{ color: "var(--text-tertiary)" }}>
+            {item.exampleSentenceMeaning}
+          </p>
+        </div>
+      </>
+    );
+  }, [supported, speak]);
+
   return (
     <ReviewSession
       contentType="vocabulary"
@@ -124,6 +191,8 @@ export default function VocabularyReviewPage() {
       crossModuleDue={crossDue}
       renderFront={renderFront}
       renderBack={renderBack}
+      renderReverseFront={renderReverseFront}
+      renderReverseBack={renderReverseBack}
     />
   );
 }

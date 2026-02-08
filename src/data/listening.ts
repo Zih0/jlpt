@@ -25,6 +25,18 @@ import { lv022Expressions } from "./listening-lv022";
 import { lv022Subtitles } from "./listening-lv022-subtitles";
 import { lv023Expressions } from "./listening-lv023";
 import { lv023Subtitles } from "./listening-lv023-subtitles";
+import { lv024Expressions } from "./listening-lv024";
+import { lv024Subtitles } from "./listening-lv024-subtitles";
+import { lv025Expressions } from "./listening-lv025";
+import { lv025Subtitles } from "./listening-lv025-subtitles";
+import { lv026Expressions } from "./listening-lv026";
+import { lv026Subtitles } from "./listening-lv026-subtitles";
+import { lv027Expressions } from "./listening-lv027";
+import { lv027Subtitles } from "./listening-lv027-subtitles";
+import { lv028Expressions } from "./listening-lv028";
+import { lv028Subtitles } from "./listening-lv028-subtitles";
+import { lv029Expressions } from "./listening-lv029";
+import { lv029Subtitles } from "./listening-lv029-subtitles";
 
 export const listeningData: ListeningVideo[] = [
   {
@@ -130,5 +142,53 @@ export const listeningData: ListeningVideo[] = [
     channelTitle: "TechWorld / テックワールド",
     expressions: lv023Expressions,
     subtitles: lv023Subtitles,
+  },
+  {
+    id: "lv024",
+    videoId: "2n76OdeJ71U",
+    title: "【効率厨のデスク環境】ITエンジニアがガチで愛用するキーボード,マウス12選",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv024Expressions,
+    subtitles: lv024Subtitles,
+  },
+  {
+    id: "lv025",
+    videoId: "F9bydxEXPYo",
+    title: "【激動の2025年と変化の2026年】外資ITエンジニアと振り返る2025年ソフトウェア業界と2026年業界予想",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv025Expressions,
+    subtitles: lv025Subtitles,
+  },
+  {
+    id: "lv026",
+    videoId: "AS8r7lK0OLo",
+    title: "【2025ベストバイ】ITエンジニアが選ぶ2025年本当に買ってよかったガジェット,ソフトウェア12選",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv026Expressions,
+    subtitles: lv026Subtitles,
+  },
+  {
+    id: "lv027",
+    videoId: "vdsaTz3Umeo",
+    title: "天才個人開発者catnoseさんのエンジニア人生と今後の展望【Zenn,しずかなインターネット,Nani!?】",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv027Expressions,
+    subtitles: lv027Subtitles,
+  },
+  {
+    id: "lv028",
+    videoId: "XsAlXYWzcv4",
+    title: "【外資ITエンジニアの開発環境】VimmerによるVimmer(になりたい人)のためのVim動画",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv028Expressions,
+    subtitles: lv028Subtitles,
+  },
+  {
+    id: "lv029",
+    videoId: "oITXeBZ3tpY",
+    title: "新卒でLINEヤフーに入社し、エンジニアの仕事を辞めた理由。",
+    channelTitle: "TechWorld / テックワールド",
+    expressions: lv029Expressions,
+    subtitles: lv029Subtitles,
   },
 ];
